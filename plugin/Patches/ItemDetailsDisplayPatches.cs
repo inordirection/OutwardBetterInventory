@@ -18,12 +18,16 @@ namespace BetterInventory.Patches {
 				return;
 			}
 			int row = Mathf.Min(detailCount, __instance.m_detailRows.Count);
-			__instance.GetRow(row).SetInfo(LocalizationManager.Instance.GetLoc($"{BetterInventory.GUID}.item_detail.value"), item.RawBaseValue.ToString());
-			row++;
-			int sellPrice = item.GetSellValue(character);
-			float weight = item.RawWeight;
-			string silverPerLb = (sellPrice / weight).ToString("0.#");
-			__instance.GetRow(row).SetInfo(LocalizationManager.Instance.GetLoc($"{BetterInventory.GUID}.item_detail.sell_price"), $"{sellPrice}" + (weight > 0 && sellPrice > 0 ? $" ({silverPerLb}/lb)" : ""));
+			if (BetterInventory.ItemDetailsValueEnabled.Value) {
+				__instance.GetRow(row).SetInfo(LocalizationManager.Instance.GetLoc($"{BetterInventory.GUID}.item_detail.value"), item.RawBaseValue.ToString());
+				row++;
+			}
+			if (BetterInventory.ItemDetailsSellPriceEnabled.Value) {
+				int sellPrice = item.GetSellValue(character);
+				float weight = item.RawWeight;
+				string silverPerLb = (sellPrice / weight).ToString("0.#");
+				__instance.GetRow(row).SetInfo(LocalizationManager.Instance.GetLoc($"{BetterInventory.GUID}.item_detail.sell_price"), $"{sellPrice}" + (weight > 0 && sellPrice > 0 ? $" ({silverPerLb}/lb)" : ""));
+			}
 		}
 
 	}
