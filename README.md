@@ -17,12 +17,14 @@ It is strongly recommended to use [Outward Config Manager](https://outward.thund
 - **Send to Host Stash**: Enables or disables the Send to Host's Stash action.
 - **Send to Other Player**: Enables or disables the Send to Other Player action.
 - **Send to Other Player max distance**: Sets the maximum distance for the Send to Other Player action (in metres). Default is 10.
+- **Show Item Sell Price**: Shows sell price (total and per unit weight) on item details panels in the inventory.
+- **Show Item Value**: Shows item value on item details panels in the inventory.
 - **Item Display Value**: Shows this value on item display panels in the inventory. Options: `Off`, `Value`, `Sell Price`, `Sell Price / lb`,` Weight`
 
 ## Planned features:
 - Change item display value with keypress (inventory action)
 - Sort inventory items
-- Ability too mark items as favourites (so they show before other items in the inventory)
+- Ability to mark items as favourites (so they show before other items in the inventory)
 - Drag and drop items and skills onto quickslots to assign
 - Skill menu filters (offensive, sigils, boons, mana spells, stamina skills, etc)
 - Custom skill menu filters (based on user specified criteria)
@@ -45,6 +47,9 @@ I'd love if you also attached a list of mods you are using, and the log from `Ou
 - **Nielsjuh** for helping me test the multiplayer bits
 
 ## Changelog
+
+### v1.2.8
+- Configurable item details display
 
 ### v1.2.7
 - Item details display optimization
